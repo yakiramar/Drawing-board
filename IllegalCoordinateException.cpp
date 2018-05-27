@@ -1,7 +1,7 @@
-#include <iostream>
-using namespace std;
-#include<string>
-#include <exception>
+// #include <iostream>
+// using namespace std;
+// #include<string>
+// #include <exception>
 #include "IllegalCoordinateException.h"
 
 IllegalCoordinateException::IllegalCoordinateException(int x2,int y2){

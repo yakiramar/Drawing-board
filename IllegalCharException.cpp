@@ -1,7 +1,7 @@
-#include<iostream>
-#include<exception>
-#include<string>
-using namespace std;
+// #include<iostream>
+// #include<exception>
+// #include<string>
+// using namespace std;
 #include "IllegalCharException.h"
 
 IllegalCharException::IllegalCharException(char c2){
