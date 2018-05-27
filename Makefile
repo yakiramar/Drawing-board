@@ -4,7 +4,7 @@ CCX=g++ -std=c++11
 
 
 
-a.out: Board.o Pair.o Spot.o IllegalCoordinateException.o IllegalCharException.o 
+a.out: Board.o Coordinate.o Spot.o IllegalCoordinateException.o IllegalCharException.o 
 
 		
 
@@ -16,9 +16,9 @@ Board.o: Board.cpp Board.h
 
 		
 
-Pair.o: Pair.cpp Pair.h
+Coordinate.o: Coordinate.cpp Coordinate.h
 
-		$(CCX) -c Pair.cpp
+		$(CCX) -c Coordinate.cpp
 
 		
 
