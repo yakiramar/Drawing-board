@@ -95,6 +95,20 @@ ostream& operator<< (ostream& os, const Board& temp_b){
     return os;
     
 }
+istream& operator>> (istream& input, Board& b_out){
+    string s;
+    cin>>s;
+    uint l=s.length();
+    Board t{l};
+    for(int i=0;i<l;i++){
+        for(int j=0;j<l;j++){
+            t.b[i][j].c=s[j];
+        }
+        cin>>s;
+    }
+    b_out=t;
+    return input;
+}
     
 Board::~Board(){
     for (int i = 0; i < length; i++){
