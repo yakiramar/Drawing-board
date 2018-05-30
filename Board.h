@@ -24,7 +24,7 @@ class Board{
        Board& operator=(char in);
        Board& operator=(const Board& b2);
        bool operator==(const Board &b2) const;
-    
+       string draw (int Pixels);
        friend ostream& operator<< (ostream& os, const Board& b);//output
        friend istream& operator>> (istream& input, Board& b);//input
        ~Board(); 
