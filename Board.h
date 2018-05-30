@@ -26,6 +26,7 @@ class Board{
        bool operator==(const Board &b2) const;
     
        friend ostream& operator<< (ostream& os, const Board& b);//output
+       friend istream& operator>> (istream& input, Board& b);//input
        ~Board(); 
        // Spot operator[](Coordinate p2)const;
        //   char operator[](Coordinate p2)const;
