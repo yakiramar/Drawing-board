@@ -152,10 +152,10 @@ void Dcircle(RGB* imge,int Xfrom,int Xto,int Yfrom,int Yto,int dimy){
                 for (int y=0; y<2*R; y++){
                     for (int x=0; x<2*R; x++){
                         if ( floor(sqrt( (x-Ox)*(x-Ox) + (y-Oy)*(y-Oy) ) ) == R-10 ) {
-                            imge[dimy * (y + Yfrom) + Xfrom + x]={0,0,255};
-                            imge[dimy * (y + Yfrom) + Xfrom + x+1]={0,0,255};
-                            imge[dimy * (y + Yfrom) + Xfrom + x+2]={0,0,255};
-                            imge[dimy * (y + Yfrom) + Xfrom + x-1]={0,0,255};
+                            imge[dimy * (y + Yfrom) + Xfrom + x]={0,255,0};
+                            imge[dimy * (y + Yfrom) + Xfrom + x+1]={0,255,0};
+                            imge[dimy * (y + Yfrom) + Xfrom + x+2]={0,255,0};
+                            imge[dimy * (y + Yfrom) + Xfrom + x-1]={0,255,0};
                         }
                     }
                 }              
@@ -209,7 +209,7 @@ string Board::draw(int nPx){
         //    imge[(dimx*j)+i].red = (i % 256);
         //    imge[(dimx*j)+i].green = (j % 256);
         //    imge[(dimx*j)+i].blue = ( ((i*i)+(j*j)) % 256);
-           imge[(dimx*j)+i]={240,240,24};           
+           imge[(dimx*j)+i]={255,255,255};           
          }
     } 
     int cellsize = dimx/length; //size for each coordinate
