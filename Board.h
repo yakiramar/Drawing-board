@@ -1,18 +1,14 @@
- #pragma once
- #include <iostream>
+#pragma once
+#include <iostream>
 #include <string>
 #include <exception>
-using namespace std;
+#include <math.h>
 #include "Spot.h"
 #include "IllegalCoordinateException.h"
 #include "IllegalCharException.h"
+using namespace std;
 
-
-class Board{
-    private:
-       
-       
-    
+class Board{  
     public:
        Spot **b;
        uint length;
@@ -26,15 +22,15 @@ class Board{
        bool operator==(const Board &b2) const;
        string draw (int Pixels);
        friend ostream& operator<< (ostream& os, const Board& b);//output
-       friend istream& operator>> (istream& input, Board& b);//input
-       ~Board(); 
-       // Spot operator[](Coordinate p2)const;
-       //   char operator[](Coordinate p2)const;
-       // char operator=(const Spot& s2);
-       //friend istream& operator>> (istream& input,  Board& b);  // (cin)
-    
+       friend istream& operator >>(istream& in , Board& theboard);//input
+       //void Dcircle(RGB* imge,int Xfrom,int Xto,int Yfrom,int Yto,int dimy); //draws a circle
+       //void Dex(RGB* imge,int Xfrom,int Xto,int Yfrom,int Yto,int dimy); // draws an aixs
+        ~Board();
 };
 
-
-    
-    
+struct RGB {
+  uint8_t red, green, blue;
+public:
+  RGB() {}
+  RGB(uint8_t red, uint8_t green, uint8_t blue): red(red), green(green), blue(blue) {}
+};
