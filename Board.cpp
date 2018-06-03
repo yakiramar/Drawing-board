@@ -131,19 +131,6 @@ Board::~Board(){
     }
 
 
-// char Board::operator[](Coordinate p2)const{
-//     if((p2.x>=length)||(p2.y>=length)){throw IllegalCoordinateException(p2.x,p2.y);}
-//     return b[p2.x][p2.y].c;
-// }
-
-// Spot Board::operator[](Coordinate p2)const{
-//     if((p2.x>=length)||(p2.y>=length)){throw IllegalCoordinateException(p2.x,p2.y);}
-//     return b[p2.x][p2.y];
-// }
-
-//  char Board::operator=(const Spot& s2){
-//      return s2.c;
-//  }
 void Dcircle(RGB* imge,int Xfrom,int Xto,int Yfrom,int Yto,int dimy){
     int R = ((Xto - Xfrom) / 2) -(int)((Xto-5 - Xfrom+5)%10);  //redius - need to fix
 				int Ox = (Xto - Xfrom) / 2 ;      // xmid
@@ -161,7 +148,6 @@ void Dcircle(RGB* imge,int Xfrom,int Xto,int Yfrom,int Yto,int dimy){
                 }              
 }
 void Dex(RGB* imge,int Xfrom,int Xto,int Yfrom,int Yto,int dimy){
-    //func tha draw x
     for (int r = 10; r < Yto - Yfrom - 10 ; ++r) {
 					//Drawing main diagonal of X
                     imge[dimy * (r + Yfrom) + Xfrom + r]={255,0,0};
@@ -184,7 +170,6 @@ string Board::draw(int nPx){
     ifstream file(fileName);
     bool myfileExist=false;
     if(file){
-        //cout<< "i's exist!!!"<<'\n';
         myfileExist=true;
     }
     int i=1;
@@ -206,9 +191,6 @@ string Board::draw(int nPx){
     //background color
     for(int j=0; j<dimy;j++){  // row
        for(int i=0; i<dimx;i++){ // column               
-        //    imge[(dimx*j)+i].red = (i % 256);
-        //    imge[(dimx*j)+i].green = (j % 256);
-        //    imge[(dimx*j)+i].blue = ( ((i*i)+(j*j)) % 256);
            imge[(dimx*j)+i]={255,255,255};           
          }
     } 
@@ -243,30 +225,6 @@ string Board::draw(int nPx){
 			}
 			else if(b[row][column] == 'O'){
 				//Drawing O
-                
-                //from https://github.com/GeekCSA/Exercise-8---Draw/blob/master/Board.cpp
-
-				// int R = ((Xto - Xfrom) / 2) -(int)((Xto-5 - Xfrom+5)%10);  //redius - need to fix
-				// int Ox = (Xto - Xfrom) / 2 ;      // xmid
-				// int Oy = (Yto - Yfrom) / 2 ;      //ymid
-
-				// for (int X = 10; X < Yto - Yfrom - 10 ; ++X) {
-				// 	int Y = floor(sqrt(R*R - (X - Ox)*(X - Ox)) + Oy);
-				// 	int attach = 20;
-				// 	//Drawing bottom size of the circle
-                //     imge[dimy * (Y + Yfrom - attach) + Xfrom + X]={0,0,255};
-                //     imge[dimy * (Y + Yfrom - attach) + Xfrom + X+1]={0,0,255};
-                //     imge[dimy * (Y + Yfrom - attach) + Xfrom + X+2]={0,0,255};
-                //     imge[dimy * (Y + Yfrom - attach) + Xfrom + X+3]={0,0,255};
-                //     imge[dimy * (Y + Yfrom - attach) + Xfrom + X+4]={0,0,255};
-                //     //Drawing upper size of the circle ?
-                //     imge[dimy * (Yto - Y + attach) + Xfrom + X]={0,0,255};
-                //     imge[dimy * (Yto - Y + attach) + Xfrom + X+1]={0,0,255};
-                //     imge[dimy * (Yto - Y + attach) + Xfrom + X+2]={0,0,255};
-                //     imge[dimy * (Yto - Y + attach) + Xfrom + X+3]={0,0,255};
-                //     imge[dimy * (Yto - Y + attach) + Xfrom + X+4]={0,0,255};
-				// }
-                //  a nicer circle with the help of yossi
                  Dcircle(imge,Xfrom,Xto,Yfrom,Yto,dimy);    
 			}
 		}
